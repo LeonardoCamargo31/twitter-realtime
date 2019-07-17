@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <title>Twitter Realtime</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Twitter Realtime</div>
+            <div class="subtitle">Receba tweets em tempo real baseado em termos de busca, para adicionar um novo termo, basta escrever no campo abaixo o termo e clicar no botão.</div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="topic" class="form-control" placeholder="Escreva um novo tópico" />
+            <div class="input-group-append">
+                <button id="btn-topic" class="btn btn-primary" type="button">Adicionar tópico</button>
+            </div>
+        </div>
+        <div class="tags">
+
+        </div>
+
+        <div id="tweets" class="row">
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

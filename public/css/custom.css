@@ -1,0 +1,138 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ebebeb;
+  color: #14171a;
+  margin: 0;
+  padding: 0px;
+}
+
+.header {
+  text-align: center;
+  padding: 25px 0px;
+}
+
+.header .title {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.header .subtitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.tags{
+  margin: 10px 0px;
+  width: 100%;
+  display: table;
+}
+.tag{
+  float: left;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 4px 8px;
+  margin: 3px;
+  border-radius: .25rem;
+}
+
+.tag:first-child{
+  margin-left: 0px;
+}
+.tag:last-child{
+  margin-right: 0px;
+}
+
+
+.tweet {
+  margin: 5px 0px;
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.1s;
+  font-size: 16px;
+}
+
+.tweet:hover {
+  border-color: #ccd6dd;
+}
+
+.tweet-head {
+  width: 100%;
+  display: table;
+}
+
+.tweet-image {
+  float: left;
+  margin-right: 10px;
+}
+.tweet-image img {
+  height: 50px;
+  width: 50px;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.tweet-author {
+  float: left;
+  padding: 1px 0px;
+}
+
+.tweet-author .name {
+  font-weight: 700;
+  transition: color 0.1s;
+  font-size: 20px;
+  line-height: 25px;
+}
+.tweet-author .name-verified {
+  position: relative;
+  display: table;
+}
+.tweet-author .name-verified:after {
+  content: "";
+  right: -28px;
+  top: -1.5px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-image: url("/imgs/verified.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.tweet-author .handle {
+  color: #657786;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.tweet-body {
+  display: table;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.tweet-body p {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0px;
+}
+.tweet-body .date {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #657786;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 720px;
+  }
+}
