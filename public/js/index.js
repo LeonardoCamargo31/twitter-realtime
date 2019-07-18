@@ -56,12 +56,11 @@ $(function () {
         $('.tweet').first().animateCss('bounceIn')
     }
 
-
     const tags = []
 
     $('#btn-topic').click(function () {
         const value = $('#topic').val()
-        const tag = `<span class="tag">${value}</span>`
+        const tag = `<span class="tag">${value}<i class="fas fa-times btn-close"></i></span>`
 
         $('#topic').val('')
         tags.push(value)
@@ -69,4 +68,11 @@ $(function () {
 
         socket.emit('startStream', value)
     })
+
+
+    $(document).on("click",'.btn-close', function() {
+        const term=$(this).parent().text()
+        socket.emit('removeTerm', term)
+        $(this).parent().remove()
+    });
 }) 

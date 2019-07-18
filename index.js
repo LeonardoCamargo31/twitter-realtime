@@ -12,7 +12,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-
 const Twit = require('twit')
 const T = new Twit({
     consumer_key: 'W6KDDWYVfkjQJIRFyaCvaaKEu',
@@ -70,14 +69,13 @@ const checkStreams = ()=>{
         streams[term].stop()//parar esse stream
         delete streams[term]//e deletamos
     })
-    
 }
 
 //conceito de salas/rooms
 //por padrão ele cria uma sala com o id do usuario
 //se quisermos algo ao usuario, enviamos para esse id
 //se quiser mandar para uma sala com mais pessoas, mandamos para sala com mais pessoas
-io.on('connection', socket => {
+io.on('connection', socket => {//socket ou client
     console.log(socket.id)
 
     //e preciso receber via socket a informação do cliente
@@ -93,6 +91,11 @@ io.on('connection', socket => {
         //console.log(streams)
     })
 
+    socket.on('removeTerm', term => {
+        socket.leave(term);
+        console.log('rooms',io.sockets.adapter.rooms)
+    })
+
     socket.on('disconnect', reason => {
         //consigo saber a razão que ele se desconectou
         //console.log(reason)//ex transport close, fechou o meio de conexão
@@ -101,11 +104,9 @@ io.on('connection', socket => {
     })
 })
 
-
 app.get('/', (req, res) => {
     res.render('index')
 })
-
 
 http.listen(port, () => {
     console.log('Servidor rodando...')

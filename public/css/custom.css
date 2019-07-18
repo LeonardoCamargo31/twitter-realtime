@@ -21,30 +21,41 @@ body {
   font-weight: 400;
 }
 
-.tags{
+.tags {
   margin: 10px 0px;
   width: 100%;
   display: table;
 }
-.tag{
+.tag {
+  position: relative;
   float: left;
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
   font-size: 16px;
-  font-weight: 300;
+  line-height: 24px;
+  font-weight: 400;
   padding: 4px 8px;
   margin: 3px;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
+}
+.tag i{
+  opacity: 0.9;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 5px;
+  transition: all .15s ease-in-out;
+}
+.tag i:hover{
+  opacity: 1;
 }
 
-.tag:first-child{
+.tag:first-child {
   margin-left: 0px;
 }
-.tag:last-child{
+.tag:last-child {
   margin-right: 0px;
 }
-
 
 .tweet {
   margin: 5px 0px;
